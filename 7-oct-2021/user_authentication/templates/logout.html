@@ -1,0 +1,16 @@
+
+{% extends 'header.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="../">Logout?</a>
+    </div>
+
+</form>
+
+{% endif %}
+{% endblock %}
